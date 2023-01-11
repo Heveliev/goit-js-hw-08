@@ -22,9 +22,9 @@ localStorage.setItem('feedback-form-state',JSON.stringify(obj))
 
 const getItem = JSON.parse(localStorage.getItem('feedback-form-state')) || '';
 
-if ({email, message} = getItem) {
-input.value = email || '';
-texrarea.value = message || '';
+if (getItem) {
+input.value = getItem.email || '';
+texrarea.value = getItem.message || '';
 }
 btn.addEventListener('click', onSubmit);
 
@@ -34,4 +34,4 @@ console.log(obj)
 localStorage.removeItem('feedback-form-state');
 input.value = '';
 texrarea.value = '';
-}   
+};
