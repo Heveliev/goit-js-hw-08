@@ -21,11 +21,13 @@ localStorage.setItem('feedback-form-state',JSON.stringify(obj))
 }
 
 const getItem = JSON.parse(localStorage.getItem('feedback-form-state')) || '';
+(function(){
+    if (getItem) {
+        input.value = getItem.email || '';
+        texrarea.value = getItem.message || '';
+        }
+})()
 
-if (getItem) {
-input.value = getItem.email || '';
-texrarea.value = getItem.message || '';
-}
 btn.addEventListener('click', onSubmit);
 
 function onSubmit (evt){
