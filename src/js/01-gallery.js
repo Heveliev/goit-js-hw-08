@@ -18,4 +18,4 @@ const markup = galleryItems.reduce((acc, {preview,original,description}) => acc 
 </a>`,'');
 gallDiv.insertAdjacentHTML('beforeend',markup);
 
-new SimpleLightbox('.gallery a');
+new SimpleLightbox('.gallery a',{captionsData:'alt',captionDelay:250,captionPosition: 'bottom',});
